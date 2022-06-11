@@ -1,0 +1,16 @@
+.root {
+    width: 100vw;
+    min-height: 100%;
+    background-color: #fff;
+
+    display: grid;
+    place-items: center;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        text-align: center;
+    }
+}

@@ -1,0 +1,40 @@
+.root {
+    width: 100vw;
+    min-height: 100%;
+    padding-top: 3rem;
+    background-color: #22d3ee;
+
+    .post {
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        border-radius: 15px;
+        background-color: white;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+
+        p {
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    button {
+        border: 1px solid rgb(194, 194, 194);
+        border-radius: 50px;
+        padding: 1rem 2rem;
+        background-color: #fff;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: rgb(226, 226, 226);
+        }
+    }
+}

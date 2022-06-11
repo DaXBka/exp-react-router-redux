@@ -1,0 +1,5 @@
+@function respSize($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $result: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / (1200 - 320)));
+    @return $result;
+}

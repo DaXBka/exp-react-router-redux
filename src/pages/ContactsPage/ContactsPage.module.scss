@@ -1,0 +1,12 @@
+.root {
+    width: 100vw;
+    min-height: 100%;
+    background-color: #facc15;
+
+    display: grid;
+    place-items: center;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
