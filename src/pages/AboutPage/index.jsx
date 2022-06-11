@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Post from '../../components/Post';
+import SkeletonPost from '../../components/Post/Skeleton';
 
 import cl from './AboutPage.module.scss';
 
 const AboutPage = () => {
     const [posts, setPosts] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         axios
@@ -18,26 +18,14 @@ const AboutPage = () => {
             .then(res => setPosts(res.data));
     }, []);
 
-    const navigateToId = id => {
-        return () => {
-            navigate(`${id}`);
-        };
-    };
-
     return (
         <div className={cl.root}>
             <div className="container">
                 <h1>AboutPage</h1>
                 <section className={cl.posts}>
-                    {posts.map(post => (
-                        <div className={cl.post} key={post.id}>
-                            <div>
-                                <h2>{post.name}</h2>
-                                <p>{post.body}</p>
-                            </div>
-                            <button onClick={navigateToId(post.id)}>See more</button>
-                        </div>
-                    ))}
+                    {posts.length > 0
+                        ? posts.map(post => <Post className={cl.post} post={post} />)
+                        : [...new Array(6)].map((_, i) => <SkeletonPost key={i} />)}
                 </section>
             </div>
         </div>
